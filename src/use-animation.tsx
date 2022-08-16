@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useRef, useEffect } from 'react'
 import { PanResponder, Dimensions, Animated, Easing } from 'react-native'
-import * as Haptics from 'expo-haptics'
 
 const window = Dimensions.get("window")
 
@@ -20,6 +19,7 @@ export const useAnimation = ({
   onMove = (...args: any): any => true,
   onRelease = (...args: any): any => true,
   onFinish = undefined as unknown as (direction?: string, finishedAmount?: number) => void | boolean | Function,
+  onReadyToFinish = (): void => undefined,
   detachHandlers = false,
   lockDimension = false,
   isVertical = trackDirections.includes('top') || trackDirections.includes('bottom'),
@@ -120,7 +120,7 @@ export const useAnimation = ({
     const finished = Math.max(...match)
     if (finished >= 1) {
       if (!vibrated) {
-        Haptics.impactAsync()
+        onReadyToFinish?.()
         vibrated = true
       }
     } else {
