@@ -1,0 +1,32 @@
+{
+  "name": "native-animator",
+  "version": "1.0.0",
+  "description": "Form controller for both React Native and React Dom",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "clear": "rm -fr ./dist && rm -rf node_modules && rm -f package-lock.json",
+    "release": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opium-pro/native-animator.git"
+  },
+  "author": "opium.pro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opium-pro/native-animator/issues"
+  },
+  "homepage": "https://github.com/opium-pro/native-animator#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-native": "^0.69.5",
+    "react": "^18.0.0",
+    "react-native": "^0.69.4",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "expo-haptics": "^11.3.0"
+  }
+}
