@@ -1,7 +1,7 @@
 {
   "name": "native-animator",
-  "version": "1.0.0",
-  "description": "Form controller for both React Native and React Dom",
+  "version": "1.0.1",
+  "description": "Hook to handle finger-following animations on React Native",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
